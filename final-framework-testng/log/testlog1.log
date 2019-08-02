@@ -1,0 +1,39 @@
+2019-07-30 23:56:32,826 [main] INFO RETC_011 - URL opened
+2019-07-30 23:56:33,635 [main] INFO RETC_011 - login credentials passed
+2019-07-30 23:56:50,201 [main] INFO RETC_011 - Assertion completed
+2019-07-30 23:56:59,447 [main] INFO RETC_011 - Logout Complete
+2019-07-30 23:56:59,798 [main] INFO RETC_011 - drivers closed
+2019-07-31 00:05:55,681 [main] INFO RETC_011 - URL opened
+2019-07-31 00:05:56,165 [main] INFO RETC_011 - login credentials passed
+2019-07-31 00:06:12,383 [main] INFO RETC_011 - Assertion completed
+2019-07-31 00:06:19,314 [main] INFO RETC_011 - Logout Complete
+2019-07-31 00:06:19,501 [main] INFO RETC_011 - drivers closed
+2019-07-31 15:35:16,834 [TestNG-tests-1] INFO RETC_011 - URL opened
+2019-07-31 15:35:17,205 [TestNG-tests-1] INFO RETC_011 - login credentials passed
+2019-07-31 15:35:27,250 [TestNG-tests-1] INFO RETC_011 - Assertion completed
+2019-07-31 15:35:35,411 [TestNG-tests-1] INFO RETC_011 - Logout Complete
+2019-07-31 15:35:37,568 [TestNG-tests-1] INFO RETC_011 - drivers closed
+2019-08-01 09:57:45,379 [TestNG-tests-1] INFO RETC_011 - URL opened
+2019-08-01 09:57:45,760 [TestNG-tests-1] INFO RETC_011 - login credentials passed
+2019-08-01 09:57:56,232 [TestNG-tests-1] INFO RETC_011 - Assertion completed
+2019-08-01 10:28:35,129 [TestNG-tests-1] INFO RETC_011 - URL opened
+2019-08-01 10:28:35,489 [TestNG-tests-1] INFO RETC_011 - login credentials passed
+2019-08-01 10:28:43,344 [TestNG-tests-1] INFO RETC_011 - Assertion completed
+2019-08-01 10:46:48,697 [TestNG-tests-1] INFO RETC_011 - URL opened
+2019-08-01 10:46:49,056 [TestNG-tests-1] INFO RETC_011 - login credentials passed
+2019-08-01 10:46:57,835 [TestNG-tests-1] INFO RETC_011 - Assertion completed
+2019-08-01 10:48:27,431 [TestNG-tests-1] INFO RETC_011 - URL opened
+2019-08-01 10:48:27,763 [TestNG-tests-1] INFO RETC_011 - login credentials passed
+2019-08-01 10:48:35,391 [TestNG-tests-1] INFO RETC_011 - Assertion completed
+2019-08-01 10:59:57,562 [TestNG-tests-1] INFO RETC_011 - URL opened
+2019-08-01 10:59:57,936 [TestNG-tests-1] INFO RETC_011 - login credentials passed
+2019-08-01 11:00:05,685 [TestNG-tests-1] INFO RETC_011 - Assertion completed
+2019-08-01 11:05:12,238 [TestNG-tests-1] INFO RETC_011 - URL opened
+2019-08-01 11:05:12,587 [TestNG-tests-1] INFO RETC_011 - login credentials passed
+2019-08-01 11:05:19,741 [TestNG-tests-1] INFO RETC_011 - Assertion completed
+2019-08-01 14:59:04,675 [TestNG-tests-1] INFO RETC_011 - URL opened
+2019-08-01 14:59:05,160 [TestNG-tests-1] INFO RETC_011 - login credentials passed
+2019-08-01 14:59:15,919 [TestNG-tests-1] INFO RETC_011 - Assertion completed
+2019-08-01 17:27:31,836 [TestNG-tests-1] INFO RETC_011 - URL opened
+2019-08-01 17:27:31,885 [TestNG-tests-1] INFO RETC_011 - Passing login credentials
+2019-08-01 17:27:44,412 [TestNG-tests-1] INFO RETC_011 - Assertion completed

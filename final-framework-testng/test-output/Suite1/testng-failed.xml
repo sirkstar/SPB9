@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Suite1]" parallel="tests">
+  <test thread-count="1" name="RETC_012(failed)" parallel="tests">
+    <classes>
+      <class name="com.training.sanity.tests.RETC_012">
+        <methods>
+          <include name="passwordRecoveryTest"/>
+          <include name="setUp"/>
+          <include name="tlearDown"/>
+        </methods>
+      </class> <!-- com.training.sanity.tests.RETC_012 -->
+    </classes>
+  </test> <!-- RETC_012(failed) -->
+</suite> <!-- Failed suite [Suite1] -->

@@ -11,9 +11,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -24,7 +26,7 @@ import com.training.pom.AdminMenuPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class LoginTests {
+public class BeforeAfterSuite {
 
 	private WebDriver driver;
 	private String baseUrl;
@@ -34,16 +36,15 @@ public class LoginTests {
 	private AdminMenuPOM AdminMenu;
 	private static Properties properties;
 	private ScreenShot screenShot;
-/*
-	@BeforeClass
+
+	@BeforeSuite
 	public static void setUpBeforeClass() throws IOException {
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);
 	}
-	*/
 
-/*	@BeforeMethod
+	@BeforeClass
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new LoginPOM(driver); 
@@ -56,19 +57,16 @@ public class LoginTests {
 		driver.get(baseUrl);
 	}
 	
-		@AfterMethod
+		@AfterSuite
 	public void tearDown() throws Exception {
 		Thread.sleep(1000);
 		driver.quit();
-		}*/
+		}
 
-	@BeforeTest
+/*	@BeforeTest
 	public void setUp() throws Exception {
-		properties = new Properties();
-		FileInputStream inStream = new FileInputStream("./resources/others.properties");
-		properties.load(inStream);
-//		-------------------
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
+//		driver = new ChromeDriver();
 		loginPOM = new LoginPOM(driver); 
 		ProfilePOM = new ProfilePOM(driver);
 		GenPassword = new ProfilePOM(driver);
@@ -77,7 +75,7 @@ public class LoginTests {
 //		driver.get("http://realestatem1.upskills.in/admin");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
-		driver.get(baseUrl);
+//		driver.get(baseUrl);
 	}
 	
 	@AfterTest
@@ -85,7 +83,7 @@ public class LoginTests {
 		Thread.sleep(1000);
 		driver.quit();
 	}
-	
+*/	
 	@Test (priority = 0)
 	public void validLoginTest() throws InterruptedException {
 		loginPOM.sendUserName("admin");
