@@ -30,7 +30,7 @@ public class ScreenShot {
 	public void captureScreenShot(){
 		
 		// to be changed 
-		String path = "C:\\Users\\Naveen\\Desktop\\screenshots\\";
+		String path = "C:\\Users\\KRISHNARAVI\\Documents\\Selenium Training docs\\Selenium Project\\Screenshots\\";
 		String fileName ="";
 
 		GregorianCalendar calendar = new GregorianCalendar(); 
@@ -47,7 +47,6 @@ public class ScreenShot {
 		// 2. capture screenshot from selenium 
 		// 3. store it in physical driver 
 		
-		
 		try {
 			TakesScreenshot takeScreenShot  = (TakesScreenshot) driver; 
 			File file = takeScreenShot.getScreenshotAs(OutputType.FILE);
@@ -57,16 +56,13 @@ public class ScreenShot {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
-		
-		
+		}		
 		
 	}
 	
-
 	public void captureScreenShot(String fileName){
 		
-		String path =  "C:\\Users\\Naveen\\Desktop\\screenshots\\";
+		String path =  "C:\\Users\\KRISHNARAVI\\Documents\\Selenium Training docs\\Selenium Project\\Screenshots\\";
 	
 		// 1. create file 
 		// 2. capture screenshot from selenium 

@@ -8,18 +8,19 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPOM {
 	private WebDriver driver; 
 	
+//	Initializing the page objects
 	public LoginPOM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(id="login")
+	@FindBy(xpath = "//input[@id='user_login']")
 	private WebElement userName; 
 	
-	@FindBy(id="password")
+	@FindBy(xpath="//input[@id='user_pass']")
 	private WebElement password;
 	
-	@FindBy(id="formLogin_submitAuth")
+	@FindBy(xpath="//input[@name='login']")
 	private WebElement loginBtn; 
 	
 	public void sendUserName(String userName) {
@@ -32,7 +33,19 @@ public class LoginPOM {
 		this.password.sendKeys(password); 
 	}
 	
-	public void clickLoginBtn() {
+	public ProfilePOM userLogin(String userName, String password) {
+		this.userName.clear();
+		this.userName.sendKeys(userName);
+		this.password.clear(); 
+		this.password.sendKeys(password); 
+		this.loginBtn.click();
+		return new ProfilePOM(driver);
+	}
+
+	public String validateHomePageTitle() {
+		return this.driver.getTitle(); 
+	}
+	public void clickLoginBtn() { 
 		this.loginBtn.click(); 
 	}
 }

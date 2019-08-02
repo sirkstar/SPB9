@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-
 /**
  * 
  * @author Naveen
@@ -23,7 +22,6 @@ public class DriverFactory {
 			System.setProperty(Driver.CHROME, Driver.CHROME_PATH);
 			driver = new ChromeDriver();
 		
-			
 		}else if(driverName.equals(DriverNames.FIREFOX)){
 			System.setProperty(Driver.FIREFOX, Driver.FIREFOX_PATH);
 			driver = new FirefoxDriver();

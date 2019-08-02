@@ -26,7 +26,6 @@ public class LoginDataProviders {
 			result[count ++] = obj; 
 		}
 		
-		
 		return result;
 	}
 	
