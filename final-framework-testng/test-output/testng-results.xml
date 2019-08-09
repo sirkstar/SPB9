@@ -1,33 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="55736" started-at="2019-08-01T11:57:00Z" finished-at="2019-08-01T11:57:56Z">
+  <suite name="Suite_medium" duration-ms="192063" started-at="2019-08-07T04:13:39Z" finished-at="2019-08-07T04:16:52Z">
     <groups>
     </groups>
-    <test name="RETC_011" duration-ms="44064" started-at="2019-08-01T11:57:00Z" finished-at="2019-08-01T11:57:44Z">
-      <class name="com.training.sanity.tests.RETC_011">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.RETC_011@1e88b3c]" name="setUp" is-config="true" duration-ms="31489" started-at="2019-08-01T11:57:00Z" finished-at="2019-08-01T11:57:31Z">
+    <test name="RETC_041" duration-ms="85618" started-at="2019-08-07T04:13:39Z" finished-at="2019-08-07T04:15:05Z">
+      <class name="com.training.sanity.tests.RETC_041">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.training.sanity.tests.RETC_041@1e88b3c]" name="setup" is-config="true" duration-ms="27915" started-at="2019-08-07T04:13:40Z" finished-at="2019-08-07T04:14:07Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.training.sanity.tests.RETC_011@1e88b3c]" name="loginTest" duration-ms="12541" started-at="2019-08-01T11:57:31Z" finished-at="2019-08-01T11:57:44Z">
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="blogcomment()[pri:0, instance:com.training.sanity.tests.RETC_041@1e88b3c]" name="blogcomment" duration-ms="8471" started-at="2019-08-07T04:14:07Z" finished-at="2019-08-07T04:14:16Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginTest -->
-      </class> <!-- com.training.sanity.tests.RETC_011 -->
-    </test> <!-- RETC_011 -->
-    <test name="RETC_013" duration-ms="11577" started-at="2019-08-01T11:57:44Z" finished-at="2019-08-01T11:57:56Z">
-      <class name="com.training.sanity.tests.RETC_013">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.sanity.tests.RETC_013@14bf9759]" name="setUp" is-config="true" duration-ms="20" started-at="2019-08-01T11:57:44Z" finished-at="2019-08-01T11:57:44Z">
+        </test-method> <!-- blogcomment -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.training.sanity.tests.RETC_041@1e88b3c]" name="setup" is-config="true" duration-ms="36993" started-at="2019-08-07T04:14:16Z" finished-at="2019-08-07T04:14:53Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="profileDataUpdate()[pri:0, instance:com.training.sanity.tests.RETC_013@14bf9759]" name="profileDataUpdate" duration-ms="11553" started-at="2019-08-01T11:57:44Z" finished-at="2019-08-01T11:57:56Z">
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="adminlogin()[pri:1, instance:com.training.sanity.tests.RETC_041@1e88b3c]" name="adminlogin" duration-ms="12214" started-at="2019-08-07T04:14:53Z" finished-at="2019-08-07T04:15:05Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- profileDataUpdate -->
-      </class> <!-- com.training.sanity.tests.RETC_013 -->
-    </test> <!-- RETC_013 -->
-  </suite> <!-- Suite1 -->
+        </test-method> <!-- adminlogin -->
+      </class> <!-- com.training.sanity.tests.RETC_041 -->
+    </test> <!-- RETC_041 -->
+    <test name="RETC_042" duration-ms="31993" started-at="2019-08-07T04:15:05Z" finished-at="2019-08-07T04:15:37Z">
+      <class name="com.training.sanity.tests.RETC_042">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.training.sanity.tests.RETC_042@5f341870]" name="setup" is-config="true" duration-ms="7" started-at="2019-08-07T04:15:05Z" finished-at="2019-08-07T04:15:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="validatePosts()[pri:0, instance:com.training.sanity.tests.RETC_042@5f341870]" name="validatePosts" duration-ms="31981" started-at="2019-08-07T04:15:05Z" finished-at="2019-08-07T04:15:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatePosts -->
+      </class> <!-- com.training.sanity.tests.RETC_042 -->
+    </test> <!-- RETC_042 -->
+    <test name="RETC_043" duration-ms="35727" started-at="2019-08-07T04:15:37Z" finished-at="2019-08-07T04:16:13Z">
+      <class name="com.training.sanity.tests.RETC_043">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.training.sanity.tests.RETC_043@59ec2012]" name="setup" is-config="true" duration-ms="8" started-at="2019-08-07T04:15:37Z" finished-at="2019-08-07T04:15:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="validateProperties()[pri:0, instance:com.training.sanity.tests.RETC_043@59ec2012]" name="validateProperties" duration-ms="35713" started-at="2019-08-07T04:15:37Z" finished-at="2019-08-07T04:16:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateProperties -->
+      </class> <!-- com.training.sanity.tests.RETC_043 -->
+    </test> <!-- RETC_043 -->
+    <test name="RETC_044" duration-ms="15571" started-at="2019-08-07T04:16:13Z" finished-at="2019-08-07T04:16:29Z">
+      <class name="com.training.sanity.tests.RETC_044">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.training.sanity.tests.RETC_044@6fd02e5]" name="setup" is-config="true" duration-ms="9" started-at="2019-08-07T04:16:13Z" finished-at="2019-08-07T04:16:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="validateFeatures()[pri:0, instance:com.training.sanity.tests.RETC_044@6fd02e5]" name="validateFeatures" duration-ms="15559" started-at="2019-08-07T04:16:13Z" finished-at="2019-08-07T04:16:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateFeatures -->
+      </class> <!-- com.training.sanity.tests.RETC_044 -->
+    </test> <!-- RETC_044 -->
+    <test name="RETC_045" duration-ms="22869" started-at="2019-08-07T04:16:29Z" finished-at="2019-08-07T04:16:52Z">
+      <class name="com.training.sanity.tests.RETC_045">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.training.sanity.tests.RETC_045@27c20538]" name="setup" is-config="true" duration-ms="13" started-at="2019-08-07T04:16:29Z" finished-at="2019-08-07T04:16:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="validateRegions()[pri:0, instance:com.training.sanity.tests.RETC_045@27c20538]" name="validateRegions" duration-ms="22855" started-at="2019-08-07T04:16:29Z" finished-at="2019-08-07T04:16:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateRegions -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.RETC_045@27c20538]" name="tearDown" is-config="true" duration-ms="1043" started-at="2019-08-07T04:16:52Z" finished-at="2019-08-07T04:16:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.training.sanity.tests.RETC_045 -->
+    </test> <!-- RETC_045 -->
+  </suite> <!-- Suite_medium -->
 </testng-results>

@@ -1,0 +1,36 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="1" verbose="1" name="Suite_medium"
+	annotations="JDK" parallel="tests">
+
+	<test name="RETC_041">
+		<classes>
+			<class name="com.training.sanity.tests.RETC_041" />
+		</classes>
+	</test>
+
+	<test name="RETC_042">
+		<classes>
+			<class name="com.training.sanity.tests.RETC_042" />
+		</classes>
+	</test>
+
+	<test name="RETC_043">
+		<classes>
+			<class name="com.training.sanity.tests.RETC_043" />
+		</classes>
+	</test>
+
+	<test name="RETC_044">
+		<classes>
+			<class name="com.training.sanity.tests.RETC_044" />
+		</classes>
+	</test>
+
+	<test name="RETC_045">
+		<classes>
+			<class name="com.training.sanity.tests.RETC_045" />
+		</classes>
+	</test>
+ 
+</suite>
