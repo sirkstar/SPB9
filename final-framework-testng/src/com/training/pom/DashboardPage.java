@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 public class DashboardPage {
@@ -45,8 +46,8 @@ public class DashboardPage {
 	@FindBy(xpath="//tr[1]//td[2]//p[contains(text(),'good')]")
 	private WebElement comment;
 	
-	@FindBy(xpath="//tr[1]//td[3]//a[contains(text(),'New Launch')]")
-	private WebElement category;
+//	@FindBy(xpath="//tr[1]//td[3]//a[contains(text(),'New Launch')]")
+//	private WebElement category;
 	
 	// Posts - Methods/Actions
 	public void hoverPostsMenu() {
@@ -120,6 +121,63 @@ public class DashboardPage {
 	//Regions - Methods/actions
 	public void clickregionmenu() {
 		this.propregions.click();
+	}
+	
+	//Users - WebElements/Web Objects
+	@FindBy(xpath = "//div[contains(text(),'Users')]")
+	private WebElement usersMain;
+	
+	@FindBy(xpath = "//li[@class= 'wp-first-item current']/a")
+	private WebElement allUsers;
+	
+	//Users - Methods/actions
+	
+	public void clickusersmain() {
+		this.usersMain.click();
+	}
+	
+	public void clickallusers() {
+		this.allUsers.click();
+	}
+	
+	//Category - WebElements/WebObjects
+	@FindBy(xpath = "//a[@id='category-add-toggle']")
+	private WebElement linkaddnewcategory;
+	
+	@FindBy(xpath = "//input[@id='newcategory']")
+	private WebElement txtnewcategory;
+	
+	@FindBy(xpath = "//select[@id='newcategory_parent']")
+	private WebElement selectparentcategory;
+	
+	@FindBy(xpath = "//input[@id='category-add-submit']")
+	private WebElement btnaddnewcategory;
+	
+	@FindBy(xpath="//div[@id='taxonomy-category']//label[contains(text(),'Test1')]/input[contains(@name,'post_category')]")
+	private WebElement checkboxchildcategory;
+	
+	//Category - Methods/actions
+	
+	public void clickAddNewCategory() {
+		this.linkaddnewcategory.click();
+	}
+	
+	public void sendTxtNewcategory(String newcategoryname) {
+		this.txtnewcategory.clear();
+		this.txtnewcategory.sendKeys(newcategoryname);
+	}
+	
+	public void selectParentCategory() {
+		Select sel = new Select(selectparentcategory);
+		sel.selectByVisibleText("New Launches");
+	}
+	
+	public void clickBtnAddNewCategory() {
+		this.btnaddnewcategory.click();
+	}
+	
+	public void checkboxChildCategory() {
+		this.checkboxchildcategory.click();
 	}
 	
 	//MISC WebElements

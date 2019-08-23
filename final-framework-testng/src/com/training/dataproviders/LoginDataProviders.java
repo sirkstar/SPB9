@@ -5,7 +5,9 @@ import java.util.List;
 import org.testng.annotations.DataProvider;
 
 import com.training.bean.LoginBean;
+import com.training.bean.userMessageBean;
 import com.training.dao.ELearningDAO;
+import com.training.dao.RealEstateDAO;
 import com.training.readexcel.ApachePOIExcelRead;
 import com.training.readexcel.ReadExcel;
 
@@ -17,7 +19,7 @@ public class LoginDataProviders {
 		List<LoginBean> list = new ELearningDAO().getLogins(); 
 		
 		Object[][] result = new Object[list.size()][]; 
-		int count = 0; 
+		int count = 0;
 		for(LoginBean temp : list){
 			Object[]  obj = new Object[2]; 
 			obj[0] = temp.getUserName(); 
@@ -29,10 +31,52 @@ public class LoginDataProviders {
 		return result;
 	}
 	
-	@DataProvider(name = "excel-inputs")
+	@DataProvider(name = "db-inputs_073")
+	public Object [][] getDBData1() {
+
+		List<userMessageBean> list1 = new RealEstateDAO().getUserMsg(); 
+		
+		Object[][] result = new Object[list1.size()][]; 
+		int count = 0;
+		for(userMessageBean temp1 : list1){
+			Object[]  obj = new Object[4]; 
+			obj[0] = temp1.getName(); 
+			obj[1] = temp1.getEmail();
+			obj[2] = temp1.getSubject();
+			obj[3] = temp1.getMessage();
+			
+			result[count ++] = obj;
+		}
+		
+		return result;
+	}
+	
+	@DataProvider(name = "excel-inputs_RETC_071")
 	public Object[][] getExcelData(){
-		String fileName ="C:/Users/Naveen/Desktop/Testing.xlsx"; 
-		return new ApachePOIExcelRead().getExcelContent(fileName); 
+		String fileName ="C:\\Users\\KRISHNARAVI\\Documents\\Selenium Training docs\\Selenium Project\\DataProvider\\ComplexScenario.xlsx"; 
+		String sheetName = "RETC_071";
+	return new ApachePOIExcelRead().getExcelContent(fileName,sheetName); 
+	}
+	
+	@DataProvider(name = "excel-inputs_RETC_072")
+	public Object[][] getExcelData1(){
+		String fileName ="C:\\Users\\KRISHNARAVI\\Documents\\Selenium Training docs\\Selenium Project\\DataProvider\\ComplexScenario.xlsx"; 
+		String sheetName = "RETC_072";
+		return new ApachePOIExcelRead().getExcelContent(fileName,sheetName); 
+	}
+	
+	@DataProvider(name = "excel-inputs_RETC_074")
+	public Object[][] getExcelData2(){
+		String fileName ="C:\\Users\\KRISHNARAVI\\Documents\\Selenium Training docs\\Selenium Project\\DataProvider\\ComplexScenario.xlsx"; 
+		String sheetName = "RETC_074";
+		return new ApachePOIExcelRead().getExcelContent(fileName,sheetName); 
+	}
+	
+	@DataProvider(name = "excel-inputs-test")
+	public Object[][] getExcelDatatest(){
+		String fileName ="C:\\Users\\KRISHNARAVI\\Documents\\Selenium Training docs\\Selenium Project\\DataProvider\\ComplexScenario.xlsx"; 
+		String sheetName = "test";
+	return new ApachePOIExcelRead().getExcelContent(fileName,sheetName); 
 	}
 	
 	@DataProvider(name = "xls-inputs")

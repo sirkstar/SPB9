@@ -8,6 +8,8 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -46,7 +48,7 @@ public class RETC_042_Test {
 	public void validatecomments() throws InterruptedException {
 		logger.info("admin login starting...");
 		login.userLogin("admin", "adminuser@12345");
-		
+	
 		logger.info("RETC_043 Starting... Adding new Post");
 		dash.hoverPropertiesMenu();
 		dash.clickaddnewprop();
@@ -54,6 +56,10 @@ public class RETC_042_Test {
 		prop.sendPropTitle("new launch");
 		prop.sendBodyofNewprop("new launch");
 		Thread.sleep(3000);
+		
+		WebDriverWait wait = new WebDriverWait(driver,10);
+		wait.until(ExpectedConditions.title)
+		
 		prop.clickPublishBtn();
 		Thread.sleep(5000);
 		prop.clickViewNewProp();

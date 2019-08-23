@@ -5,57 +5,50 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class MainPage {
+public class ContactPage {
 	private WebDriver driver; 
 	
 //	Initializing the page objects
-	public MainPage(WebDriver driver) {
+	public ContactPage(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 	}
 	
-	//Main page -  WebElements/Web Objects
-	@FindBy(xpath = "//ul[@id='responsive']//a[contains(text(),'Blog') and contains(@href,'blog')]")
-	private WebElement blog;
+	//Contact page -  WebElements/Web Objects
+	@FindBy(xpath = "//input[@placeholder='Your Name']")
+	public WebElement name;
 		
-	@FindBy(xpath = "//a[contains(text(),'Contact Us')]")
-	private WebElement contactus;
+	@FindBy(xpath = "//input[@placeholder='Email Address']")
+	public WebElement email;
 	
-	@FindBy(xpath = "//a[contains(text(),'Real Estate')]")
-	private WebElement logorealestate;
-	
-	@FindBy(xpath = "//input[@placeholder='Search here for Properties..']")
-	private WebElement search;
-	
-	@FindBy(xpath = "//div[@class='promagnifier']/div[@class='innericon']/*[1]")
-	private WebElement searchicon;
-	
-	@FindBy(xpath = "//a[@class='asl_res_url'][contains(text(),'vihar')]")
-	private WebElement selectsearch;
-	
-	// Main Page - Actions/Methods
-	public void clickBlog() { 
-		this.blog.click(); 
-	}
-	
-	public void clickContactUs() { 
-		this.contactus.click(); 
-	}
-	
-	public void clickRealEstateLogo() {
-		this.logorealestate.click();
-	}
-	
-	public void sendSearchText(String searchtext) {
-		this.search.sendKeys(searchtext);
-	}
+	@FindBy(xpath = "//input[@placeholder='Subject']")
+	public WebElement subjectline;
 		
-	public void selectsearchresult() {
-		this.selectsearch.click();
+	@FindBy(xpath = "//textarea[@placeholder='Message']")
+	public WebElement messagecontent;
+	
+	@FindBy(xpath = "//input[@type='submit'][@value='Send']")
+	private WebElement submitbtn;
+	
+	// Contact Page - Actions/Methods
+	public void sendUserName(String userName) { 
+		this.name.sendKeys(userName); 
 	}
 	
-	public void clickSearchicon() {
-		this.searchicon.click();
+	public void sendEmail(String userEmail) { 
+		this.email.sendKeys(userEmail); 
+	}
+	
+	public void sendSubjectLine(String subjectLine) { 
+		this.subjectline.sendKeys(subjectLine); 
+	}
+	
+	public void sendActualMessage(String userMessage) { 
+		this.messagecontent.sendKeys(userMessage); 
+	}
+	
+	public void clickSubmitbtn() { 
+		this.submitbtn.click(); 
 	}
 	
 //	@FindBy(xpath="//div[contains(@class,'category-uncategorized')]//a[contains(text(),'Read More')]")

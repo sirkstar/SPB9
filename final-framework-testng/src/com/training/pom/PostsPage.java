@@ -55,6 +55,10 @@ public class PostsPage {
 		this.publishnewpost.click();
 	}
 	
+	public void clickPublish() {
+		this.publishnewpost.click();
+	}
+	
 	public void clickAllPosts() {
 		this.allpostsmenu.click();
 	}
@@ -72,4 +76,34 @@ public class PostsPage {
 	public String validateHomePageTitle() {
 		return this.driver.getTitle(); 
 	}
+	
+	//Category - WebElements/Web Objects
+	@FindBy(xpath="//a[@id='category-add-toggle']")
+	private WebElement addnewcategorylink; 
+	
+	@FindBy(xpath="//input[@id='newcategory']")
+	private WebElement newcategory; 
+	
+	@FindBy(xpath="//select[@id='newcategory_parent']")
+	private WebElement newcategoryparent; 
+	
+	@FindBy(xpath="//input[@id='category-add-submit']")
+	private WebElement btnaddnewcategory; 
+	
+	@FindBy(xpath="//div[@id='taxonomy-category']//label[contains(text(),'Test1')]/input[contains(@name,'post_category')]")
+	private WebElement selectcategory; 
+	
+	//Category - Methods/Actions
+	public void clickaddnewcategorylink() {
+		this.addnewcategorylink.click();
+	}
+	
+	public void clickaddnewcategorylink1() {
+		this.addnewcategorylink.click();
+	}
+	
+	public void clicknewlaunchlink1() {
+		this.clicknewlaunches.click();
+	}
+	
 }

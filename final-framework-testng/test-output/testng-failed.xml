@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Suite_medium]" parallel="tests">
-  <test thread-count="1" name="RETC_045(failed)" parallel="tests">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.RETC_045">
+      <class name="com.training.sanity.tests.RETC_071_Test">
         <methods>
-          <include name="tearDown"/>
+          <include name="contactForm" invocation-numbers="0"/>
           <include name="setup"/>
-          <include name="validatecomments"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.RETC_045 -->
+      </class> <!-- com.training.sanity.tests.RETC_071_Test -->
     </classes>
-  </test> <!-- RETC_045(failed) -->
-</suite> <!-- Failed suite [Suite_medium] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
@@ -20,6 +21,8 @@ public class DriverFactory {
 
 		if(driverName.equals(DriverNames.CHROME)){
 			System.setProperty(Driver.CHROME, Driver.CHROME_PATH);
+			ChromeOptions options = new ChromeOptions();
+//			options.addArguments("disable-infobars");
 			driver = new ChromeDriver();
 		
 		}else if(driverName.equals(DriverNames.FIREFOX)){

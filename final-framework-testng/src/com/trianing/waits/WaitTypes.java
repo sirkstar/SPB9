@@ -43,7 +43,7 @@ public class WaitTypes {
 		return null;
 	}
 	
-	// this method shall take String parameter, and assumiing that it will 
+	// this method shall take String parameter, and assuming that it will 
 	// only send by id 
 	public WebElement presenceElementLocated(String locator, int timeout){
 		try{

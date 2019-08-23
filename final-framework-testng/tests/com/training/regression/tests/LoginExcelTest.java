@@ -54,7 +54,6 @@ public class LoginExcelTest {
 		loginPOM.sendPassword(password);
 		loginPOM.clickLoginBtn();
 		screenShot.captureScreenShot(userName);
-
 	}
 
 }
