@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -24,8 +25,9 @@ import com.training.pom.ProfilePOM;
 import com.training.pom.PropertiesPage;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
+import com.training.utility.Helper;
 
-public class RETC_072_Test {
+public class RETC_073 {
 
 	private static WebDriver driver;
 	private MainPage mainpage;
@@ -57,19 +59,27 @@ public class RETC_072_Test {
 		logger.info("Base URL opened");		
 	}
 	
-	@Test(dataProvider = "excel-inputs_RETC_072", dataProviderClass=LoginDataProviders.class)
+	@Test(dataProvider = "db-inputs_073", dataProviderClass=LoginDataProviders.class)
 	public void contactForm(String userName, String userEmail, String subjectLine, String userMessage) throws InterruptedException {
 		logger.info("add comment in Blog for New Launch staring...");
-		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0,document.body.scrollHeight);");
 		Thread.sleep(2000);
 		mainpage.clickContactUs();
 		contactpage.sendUserName(userName);
+		Thread.sleep(1000);
 		contactpage.sendEmail(userEmail);
+		Thread.sleep(2000);
 		contactpage.sendSubjectLine(subjectLine);
+		Thread.sleep(3000);
 		contactpage.sendActualMessage(userMessage);
+		Thread.sleep(5000);
 		contactpage.clickSubmitbtn();
-		driver.close();
+	}
+	
+	@AfterMethod
+	public void tearDown() throws Exception {
+		driver.quit();
+		System.out.println("Closed the Browser after RETC_073");
 	}
 }

@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.RETC_071_Test">
+      <class name="com.training.sanity.tests.RETC_072">
         <methods>
-          <include name="contactForm" invocation-numbers="0"/>
           <include name="setup"/>
+          <include name="contactForm" invocation-numbers="2"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.RETC_071_Test -->
+      </class> <!-- com.training.sanity.tests.RETC_072 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

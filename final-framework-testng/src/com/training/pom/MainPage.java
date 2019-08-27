@@ -2,6 +2,7 @@ package com.training.pom;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -30,7 +31,8 @@ public class MainPage {
 	@FindBy(xpath = "//div[@class='promagnifier']/div[@class='innericon']/*[1]")
 	private WebElement searchicon;
 	
-	@FindBy(xpath = "//a[@class='asl_res_url'][contains(text(),'vihar')]")
+//	@FindBy(xpath = "//a[@class='asl_res_url'][contains(text(),'vihar')]")
+	@FindBy(xpath = "//a[contains(text(),'vihar')]//span[@class='overlap']")
 	private WebElement selectsearch;
 	
 	// Main Page - Actions/Methods
@@ -50,7 +52,10 @@ public class MainPage {
 		this.search.sendKeys(searchtext);
 	}
 		
-	public void selectsearchresult() {
+	public void selectsearchresult() throws InterruptedException {
+		Actions actions = new Actions(driver);
+		actions.moveToElement(selectsearch).build().perform();
+		Thread.sleep(3000);
 		this.selectsearch.click();
 	}
 	

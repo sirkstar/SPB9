@@ -2,7 +2,9 @@ package com.training.sanity.tests;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -26,6 +28,7 @@ import com.training.pom.MainPage;
 import com.training.pom.PostsPage;
 import com.training.pom.ProfilePOM;
 import com.training.pom.PropertiesPage;
+import com.training.pom.RealEstatePage;
 import com.training.pom.UsersPage;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
@@ -38,19 +41,19 @@ public class RETC_075{
 	private PostsPage posts;
 	private AdminMenuPOM admin;
 	private MainPage main;
+	private RealEstatePage real;
 	private JavaScriptMethods js;
 	private static Properties properties;
 	private String baseUrl;
 	private Logger logger;
-//	private ScreenShot screenshot;
 
 	public static WebDriver getDriver() {
 		return driver;
 	}
 		
-	@Test(dataProvider = "excel-inputs_RETC_074", dataProviderClass=LoginDataProviders.class)
-	public void contactForm(String username, String rolechange) throws InterruptedException {
-		logger.info("RETC_074 starting");
+	@Test
+	public void contactForm() throws InterruptedException {
+		logger.info("RETC_075 starting");
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("adminuser@12345");
 		loginPOM.clickLoginBtn();
@@ -61,44 +64,29 @@ public class RETC_075{
 		dash.selectParentCategory();
 		dash.clickBtnAddNewCategory();
 		
-		driver.navigate().refresh();
-		Thread.sleep(3000);
-		
+		driver.navigate().refresh();		
 		posts.sendtitleofnewpost("vihar");
-		Thread.sleep(2000);
 		posts.sendbodyofnewpost("New Launch in Plots");
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		dash.checkboxChildCategory();
-		js.scrollTop();
 		Thread.sleep(2000);
 		posts.clickPublish();
-		
+		Thread.sleep(5000);
 		admin.hoverAdmin();
 		admin.clickLogOut();
-		
 		main.clickRealEstateLogo();
-		js.scrollBy300();
-		
-		// Perform the click operation that opens new window
-		String winHandleBefore = driver.getWindowHandle();
-		
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,300)");
 		main.sendSearchText("vihar");
-		main.selectsearchresult();
-		Thread.sleep(3000);
-			
-		// Switch to new window opened
-		for(String winHandle : driver.getWindowHandles()){
-		    driver.switchTo().window(winHandle);
-		}
-
-		// Perform the actions on new window
+		main.selectsearchresult();		
+		ArrayList<String> windowHandles = new ArrayList<String> (driver.getWindowHandles());
+		driver.switchTo().window(windowHandles.get(1));
+		real.assertPostText();
+		driver.close();
+		driver.switchTo().window(windowHandles.get(0));
 
 		// Close the new window, if that window no more required
-		driver.close();
-
-		// Switch back to original browser (first window)
-		driver.switchTo().window(winHandleBefore);
-
+		driver.quit();
 	}
 	
 	@BeforeMethod
@@ -113,13 +101,15 @@ public class RETC_075{
 		posts = new PostsPage(driver);
 		admin = new AdminMenuPOM(driver);
 		main = new MainPage(driver);
+		real = new RealEstatePage(driver);
 		js = new JavaScriptMethods();
 		baseUrl=properties.getProperty("baseURL");
 //		screenshot = new ScreenShot(driver);
 		driver.navigate().to(baseUrl);
-		logger=Logger.getLogger("RETC_074");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		logger=Logger.getLogger("RETC_075");
 		logger.info("Before Method initialized...");
-		logger.info("Base URL opened");		
+		logger.info("Base URL opened");
 	}
 	
 	@AfterClass

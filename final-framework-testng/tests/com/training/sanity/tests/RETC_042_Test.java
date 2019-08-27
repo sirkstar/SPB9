@@ -57,8 +57,8 @@ public class RETC_042_Test {
 		prop.sendBodyofNewprop("new launch");
 		Thread.sleep(3000);
 		
-		WebDriverWait wait = new WebDriverWait(driver,10);
-		wait.until(ExpectedConditions.title)
+//		WebDriverWait wait = new WebDriverWait(driver,10);
+//		wait.until(ExpectedConditions.title)
 		
 		prop.clickPublishBtn();
 		Thread.sleep(5000);

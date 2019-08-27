@@ -12,6 +12,7 @@ public class JavaScriptMethods {
 		js.executeScript("window.scrollTo(0,document.body.scrollTop)");
 	}
 	public void scrollBy300() {
-		js.executeScript("window.scrollBy(0,300);");
+//		js.executeScript("window.scrollBy(0,300);");
+		js.executeScript("window.scrollBy(0,300)");
 	}
 }

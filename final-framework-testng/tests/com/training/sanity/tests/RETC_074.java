@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -26,14 +27,12 @@ import com.training.pom.UsersPage;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class RETC_074_Test{
+public class RETC_074{
 
 	private static WebDriver driver;
 	private LoginPOM loginPOM;
 	private DashboardPage dash;
 	private UsersPage user;
-//	private MainPage mainpage;
-//	private ContactPage contactpage;
 	private static Properties properties;
 	private String baseUrl;
 	private Logger logger;
@@ -53,12 +52,7 @@ public class RETC_074_Test{
 		loginPOM = new LoginPOM(driver);
 		dash = new DashboardPage(driver);
 		user = new UsersPage(driver);
-//		login = new loginCommon();
-//		mainpage = new MainPage(driver);
-//		contactpage = new ContactPage(driver);
 		baseUrl=properties.getProperty("baseURL");
-//		screenshot = new ScreenShot(driver);
-//		driver.get(baseUrl);
 		driver.navigate().to(baseUrl);
 		logger=Logger.getLogger("RETC_074");
 		logger.info("Before Method initialized...");
@@ -73,11 +67,9 @@ public class RETC_074_Test{
 		loginPOM.clickLoginBtn();
 		dash.clickusersmain();
 		dash.clickallusers();
-//		Thread.sleep(2000);
 		user.userSearch(username);
 		logger.info("clicking the user's checkbox");
 		user.clickUserCheckbox(username);
-//		Thread.sleep(3000);
 		logger.info("Selecting the role to be changed");
 		user.selectroletobechanged(rolechange);
 		logger.info("Clicking the change role button");
@@ -87,6 +79,11 @@ public class RETC_074_Test{
 		user.userSearch(username);
 		logger.info("Assert to ensure the new role change got in effect");
 		user.assertrolechanged(username, rolechange);
-		driver.close();
+	}
+	
+	@AfterMethod
+	public void tearDown() throws Exception {
+		driver.quit();
+		System.out.println("Closed the Browser after RETC_074");
 	}
 }
